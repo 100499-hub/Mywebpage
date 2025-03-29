@@ -1,0 +1,311 @@
+/* Global Reset */
+* {
+    padding: 0;
+    margin: 0;
+    outline: none;
+    border: none;
+    box-sizing: border-box;
+}
+
+img {
+    width: 100%;
+    display: flex;
+}
+
+a {
+    text-decoration: none;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #232222;
+}
+
+/* Main Navigation Styles */
+nav {
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-wrap: wrap; /* Ensures content wraps if needed */
+}
+
+nav img {
+    margin: 0 auto;
+    height: 100%;
+    width: 60%;
+}
+
+.nav-logo {
+    width: 100px;
+    height: 100px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 50%;
+}
+
+/* Navigation Links */
+.nav-links {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+    width: auto;
+}
+
+.link a {
+    position: relative;
+    padding: 0.5rem;
+    color: #fff;
+    display: inline-block; /* Ensure proper hover detection */
+    z-index: 1; /* Ensure it's above any other background elements */
+}
+
+/* Hover Effect */
+.link a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #1d4ed8;
+    transition: all 0.3s ease;
+}
+
+.link a:hover::after {
+    width: 70%;
+}
+
+/* Button */
+.btn {
+    padding: 1rem 2rem;
+    font-size: 1rem;
+    color: white;
+    background-color: #1d4ed8;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    z-index: 1;
+}
+
+.btn:hover {
+    background-color: #1e40af;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column; /* Stack navigation items vertically */
+        align-items: flex-start; /* Align items to the left */
+        padding: 1rem; /* Adjust padding */
+    }
+
+    .nav-links {
+        flex-direction: column; /* Stack links */
+        align-items: flex-start; /* Align links to the left */
+        width: 100%; /* Take up full width */
+        gap: 1rem; /* Reduce spacing between links */
+    }
+
+    .link a {
+        padding: 0.5rem 0; /* Adjust padding for smaller screens */
+        width: 100%; /* Take up full width */
+    }
+
+    .btn {
+        width: 100%; /* Button spans full width */
+        text-align: center; /* Center text inside the button */
+    }
+}
+
+/* Container */
+.container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 5rem 2rem;
+}
+
+/* Blur Effect */
+.blur {
+    position: absolute;
+    box-shadow: 0 0 1000px 50px #1d4ed8;
+    z-index: -100; /* Keeps this element in the background */
+}
+
+/* Header */
+header {
+    position: relative;
+    padding: 2rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    gap: 2rem;
+}
+
+header .content h4 {
+    margin-bottom: 1rem;
+    color: #ccc;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+header .content h1 {
+    color: #fff;
+    margin-bottom: 1rem;
+    font-size: 3rem;
+    font-weight: 700;
+    line-height: 4rem;
+}
+
+header .content h1 span {
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke: 1px #fff;
+}
+
+header .content p {
+    margin-bottom: 2rem;
+    color: #ccc;
+}
+
+header .image {
+    position: relative;
+}
+
+/*header .image::before {*/
+/*    content: "o";*/
+/*    position: absolute;*/
+/*    top: 0;*/
+/*    left: 50%;*/
+/*    transform: translate(-50%);*/
+/*    font-size: 45rem;*/
+/*    font-weight: 400;*/
+/*    line-height: 16rem;*/
+/*    color: #1d4ed8;*/
+/*    opacity: 0.2;*/
+/*}*/
+
+header .image img {
+    max-width: 600px;
+    margin: auto;
+    border-radius: 40px;
+}
+
+section .header {
+    margin-bottom: 1rem;
+    color: #fff;
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 600;
+}
+
+.features {
+    margin-top: 4rem;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+}
+
+.features .card {
+    background-color: #27272a;
+    padding: 1rem;
+    border: 2px solid transparent;
+    border-radius: 15px;
+    transition: all 0.3s ease;
+}
+
+.features .card:hover {
+    background-color: #323232;
+    border-color: #fff;
+}
+
+.features .card span {
+    display: inline-block;
+    background-color: #1d4ed8;
+    padding: 2px 9px;
+    margin-bottom: 1rem;
+    font-size: 1.75rem;
+    color: #fff;
+    border-radius: 5px;
+}
+
+.features .card h4 {
+    margin-bottom: 0.5rem;
+    color: #fff;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.features .card p {
+    color: #ccc;
+    margin-bottom: 1rem;
+}
+
+.features .card a {
+    color: #fff;
+    transition: all 0.3s ease;
+}
+
+.features .card a:hover {
+    color: #1d4ed8;
+}
+
+.subheader {
+    max-width: 600px;
+    margin: auto;
+    text-align: center;
+    color: #ccc;
+}
+
+.projects {
+    margin-top: 4rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+.projects .card {
+    padding: 3rem 2rem;
+    background-color: #27272a;
+    display: flex;
+    flex-direction: column;
+    border: 2px solid transparent;
+    border-radius: 15px;
+    transition: all 0.3s ease;
+}
+
+.projects .card:hover {
+    background-color: #323232;
+    border-color: #fff;
+}
+
+.projects .card .content {
+    flex: 1;
+    margin-bottom: 2rem;
+}
+
+.projects .card h4 {
+    margin-bottom: 1rem;
+    color: #fff;
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+.projects .card p {
+    color: #fff;
+    margin-bottom: 0.75rem;
+}
+
+.projects .card button {
+    color: #fff;
+    background-color: transparent;
+    border: 2px solid #fff;
+}
+
+.projects .card button:hover {
+    background-color: #1e40af;
+    border-color: #1e40af;
+}
